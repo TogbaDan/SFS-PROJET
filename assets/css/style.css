@@ -103,11 +103,11 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
 /* ---------- En-tête ---------- */
 .header { position: sticky; top: 0; z-index: 50; background: #fff; transition: box-shadow .2s; }
 .header.is-scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.08); }
-.header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 96px; gap: 24px; }
+.header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 88px; gap: 24px; }
 
 .logo { display: block; flex: none; }
-.logo img { height: 80px; width: auto; }
-.logo--footer img { height: 96px; }
+.logo img { height: 58px; width: auto; }
+.logo--footer img { height: 60px; }
 
 .nav ul { display: flex; gap: 30px; }
 .nav a {
@@ -356,7 +356,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 960px) {
+/* Menu burger dès que la navigation ne tient plus sur une ligne */
+@media (max-width: 1060px) {
   .burger { display: block; }
   .header__actions .btn { display: none; }
   .nav {
@@ -368,6 +369,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   .nav ul { flex-direction: column; gap: 0; padding: 10px 20px 20px; }
   .nav a { padding: 12px 0; border-bottom: 1px solid var(--line); }
   .nav a::after { display: none; }
+}
+
+@media (max-width: 960px) {
   .hero__features-grid { grid-template-columns: repeat(2, 1fr); }
   .why__grid { grid-template-columns: repeat(2, 1fr); row-gap: 36px; }
   .why__item:nth-child(3) { border-left: 0; }
@@ -383,7 +387,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   .topbar .social, .topbar__info li:nth-child(3) { display: none; }
   .topbar__info { gap: 14px; justify-content: center; }
   .header__inner { min-height: 70px; }
-  .logo img { height: 58px; }
+  .logo img { height: 42px; }
   .hero { min-height: 0; }
   .hero__content { padding-top: 50px; padding-bottom: 40px; }
   .hero__arrow { display: none; }
