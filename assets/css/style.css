@@ -103,25 +103,11 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
 /* ---------- En-tête ---------- */
 .header { position: sticky; top: 0; z-index: 50; background: #fff; transition: box-shadow .2s; }
 .header.is-scrolled { box-shadow: 0 4px 18px rgba(0,0,0,.08); }
-.header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 84px; gap: 24px; }
+.header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 96px; gap: 24px; }
 
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo__mark {
-  position: relative;
-  font-family: var(--font-title); font-weight: 800; font-style: italic; font-size: 2rem;
-  color: var(--navy); letter-spacing: -1px; line-height: 1;
-  padding-top: 8px;
-}
-.logo__mark::before { /* toit stylisé */
-  content: ""; position: absolute; left: 2px; top: -4px; width: 46px; height: 14px;
-  border-top: 4px solid var(--red); border-left: 4px solid var(--red);
-  transform: skewX(-20deg) rotate(-8deg);
-}
-.logo__mark small { font-size: .45em; font-style: normal; background: var(--navy); color: #fff; padding: 1px 4px; margin-left: 3px; vertical-align: middle; border-radius: 2px; }
-.logo__text { font-size: .66rem; font-weight: 600; color: var(--navy); line-height: 1.25; border-left: 1px solid var(--line); padding-left: 10px; }
-.logo--light .logo__mark, .logo--light .logo__text { color: #fff; }
-.logo--light .logo__mark small { background: #fff; color: var(--navy); }
-.logo--light .logo__text { border-color: rgba(255,255,255,.3); }
+.logo { display: block; flex: none; }
+.logo img { height: 80px; width: auto; }
+.logo--footer img { height: 96px; }
 
 .nav ul { display: flex; gap: 30px; }
 .nav a {
@@ -397,7 +383,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   .topbar .social, .topbar__info li:nth-child(3) { display: none; }
   .topbar__info { gap: 14px; justify-content: center; }
   .header__inner { min-height: 70px; }
-  .logo__text { display: none; }
+  .logo img { height: 58px; }
   .hero { min-height: 0; }
   .hero__content { padding-top: 50px; padding-bottom: 40px; }
   .hero__arrow { display: none; }

@@ -28,3 +28,9 @@ Pour ajouter un partenaire, copiez un bloc `<li class="partner">` dans `index.ht
 `real-1.jpg` (grande vignette, 900 × 700), `real-2.jpg` et `real-3.jpg` (600 × 400) :
 photos de vos projets pour la section « Nos réalisations ». Pensez à adapter
 les titres et catégories correspondants dans `index.html`.
+
+## Logo
+
+- `logo.png` : logo en couleurs, fond transparent (en-tête).
+- `logo-blanc.png` : version claire avec le toit rouge (pied de page, fond foncé).
+Pour changer le logo, remplacez ces deux fichiers en gardant les mêmes noms.
