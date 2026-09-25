@@ -75,7 +75,7 @@
   }
 
   // Apparition des sections au défilement
-  var targets = document.querySelectorAll('.section-head, .card, .why__item, .sector, .step, .about__grid > *, .vmv__card, .legal__grid > *, .leader__grid > *, .purpose__text, .purpose__cards li');
+  var targets = document.querySelectorAll('.section-head, .card, .why__item, .sector, .step, .about__grid > *, .vmv__card, .leader__grid > *, .purpose__text, .purpose__cards li');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
