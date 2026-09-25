@@ -287,26 +287,37 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
 .cta h2 { color: #fff; font-size: clamp(1.3rem, 2vw, 1.7rem); }
 .cta p { opacity: .9; font-size: .9rem; }
 
-/* ---------- Partenaires ---------- */
+/* ---------- Partenaires (défilement continu des logos) ---------- */
 .partners { padding: 50px 0; }
-.partners__carousel { display: flex; align-items: center; gap: 14px; margin-top: 20px; }
-.carousel-btn { flex: none; width: 34px; height: 34px; color: var(--navy); border-radius: 50%; transition: background .2s; }
-.carousel-btn:hover { background: var(--bg-grey); }
-.partners__track {
-  flex: 1; display: flex; align-items: center; gap: 56px; overflow-x: auto; scroll-behavior: smooth;
-  scrollbar-width: none; padding: 10px 0;
+.partners__marquee {
+  overflow: hidden; margin-top: 24px; padding: 10px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
-.partners__track::-webkit-scrollbar { display: none; }
-.partner { flex: none; font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; filter: grayscale(0); opacity: .9; transition: opacity .2s, transform .2s; }
-.partner:hover { opacity: 1; transform: scale(1.05); }
-.partner--legrand { color: #d6001c; letter-spacing: -1px; }
-.partner--schneider { color: #3dcd58; font-style: italic; display: flex; flex-direction: column; line-height: 1; }
+.partners__track { display: flex; align-items: center; width: max-content; animation: partners-scroll 30s linear infinite; }
+.partners__marquee:hover .partners__track { animation-play-state: paused; }
+@keyframes partners-scroll { to { transform: translateX(-50%); } }
+.partner {
+  flex: none; display: flex; align-items: center; justify-content: center;
+  width: 180px; height: 80px; margin-right: 40px;
+}
+.partner img {
+  max-width: 100%; max-height: 64px; width: auto; height: auto; object-fit: contain;
+  filter: grayscale(100%); opacity: .7; transition: filter .3s, opacity .3s, transform .3s;
+}
+.partner:hover img { filter: none; opacity: 1; transform: scale(1.06); }
+/* Nom affiché en secours tant que le fichier logo n'est pas fourni */
+.partner__name { display: none; font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; line-height: 1; }
+.partner.is-missing img { display: none; }
+.partner.is-missing .partner__name { display: flex; flex-direction: column; align-items: center; }
+.partner--legrand .partner__name { color: #d6001c; letter-spacing: -1px; }
+.partner--schneider .partner__name { color: #3dcd58; font-style: italic; }
 .partner--schneider small { font-size: .5em; }
-.partner--total { color: #e2001a; font-size: 1.1rem; }
-.partner--sodeci { color: #0b3b8c; font-size: 1.2rem; }
-.partner--3m { color: #ff0000; font-size: 2rem; }
-.partner--dewalt { background: #febd17; color: #000; padding: 2px 10px; font-size: 1.3rem; }
-.partner--stihl { color: #f37a1f; font-style: italic; letter-spacing: 2px; }
+.partner--total .partner__name { color: #e2001a; font-size: 1.1rem; }
+.partner--sodeci .partner__name { color: #0b3b8c; font-size: 1.2rem; }
+.partner--3m .partner__name { color: #ff0000; font-size: 2rem; }
+.partner--dewalt .partner__name { background: #febd17; color: #000; padding: 2px 10px; font-size: 1.3rem; }
+.partner--stihl .partner__name { color: #f37a1f; font-style: italic; letter-spacing: 2px; }
 
 /* ---------- Actualités ---------- */
 .news { padding-top: 30px; }
@@ -340,6 +351,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+  .partners__marquee { overflow-x: auto; }
 }
 
 /* =========================================================
@@ -398,7 +410,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   .steps { grid-template-columns: 1fr; }
   .step + .step::before { display: none; }
   .cta__media::after { background: rgba(8,29,77,.88); }
-  .partners__track { gap: 36px; }
+  .partner { width: 130px; margin-right: 24px; }
   .footer__grid { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; text-align: center; }
 }

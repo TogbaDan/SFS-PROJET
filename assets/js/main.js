@@ -54,17 +54,20 @@
   document.querySelector('.hero__arrow--next').addEventListener('click', function () { show(current + 1); restart(); });
   restart();
 
-  // Carrousel des partenaires
+  // Logos partenaires : nom en secours si le logo est absent, puis défilement en boucle
   var track = document.getElementById('partnersTrack');
-  document.querySelectorAll('.carousel-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var dir = Number(btn.dataset.dir);
-      var max = track.scrollWidth - track.clientWidth;
-      var next = track.scrollLeft + dir * track.clientWidth * 0.6;
-      if (next > max + 5) next = 0;
-      else if (next < -5) next = max;
-      track.scrollTo({ left: next, behavior: 'smooth' });
-    });
+  // Duplique la liste pour que l'animation (translateX -50 %) boucle sans coupure
+  Array.prototype.slice.call(track.children).forEach(function (item) {
+    var clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelector('img').alt = '';
+    track.appendChild(clone);
+  });
+  track.querySelectorAll('.partner img').forEach(function (img) {
+    var item = img.closest('.partner');
+    function markMissing() { item.classList.add('is-missing'); }
+    if (img.complete && img.naturalWidth === 0) markMissing();
+    img.addEventListener('error', markMissing);
   });
 
   // Apparition des sections au défilement
