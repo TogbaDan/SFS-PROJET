@@ -1,4 +1,4 @@
-/* SFS – interactions de la page d'accueil */
+/* SFS – interactions communes aux pages du site */
 (function () {
   'use strict';
 
@@ -37,41 +37,45 @@
   onScroll();
   toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-  // Diaporama du hero
+  // Diaporama du hero (page d'accueil)
   var slides = document.querySelectorAll('.hero__slide');
-  var current = 0;
-  var timer;
-  function show(index) {
-    slides[current].classList.remove('is-active');
-    current = (index + slides.length) % slides.length;
-    slides[current].classList.add('is-active');
+  if (slides.length) {
+    var current = 0;
+    var timer;
+    function show(index) {
+      slides[current].classList.remove('is-active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('is-active');
+    }
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(function () { show(current + 1); }, 6000);
+    }
+    document.querySelector('.hero__arrow--prev').addEventListener('click', function () { show(current - 1); restart(); });
+    document.querySelector('.hero__arrow--next').addEventListener('click', function () { show(current + 1); restart(); });
+    restart();
   }
-  function restart() {
-    clearInterval(timer);
-    timer = setInterval(function () { show(current + 1); }, 6000);
-  }
-  document.querySelector('.hero__arrow--prev').addEventListener('click', function () { show(current - 1); restart(); });
-  document.querySelector('.hero__arrow--next').addEventListener('click', function () { show(current + 1); restart(); });
-  restart();
 
   // Logos partenaires : nom en secours si le logo est absent, puis défilement en boucle
   var track = document.getElementById('partnersTrack');
-  // Duplique la liste pour que l'animation (translateX -50 %) boucle sans coupure
-  Array.prototype.slice.call(track.children).forEach(function (item) {
-    var clone = item.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    clone.querySelector('img').alt = '';
-    track.appendChild(clone);
-  });
-  track.querySelectorAll('.partner img').forEach(function (img) {
-    var item = img.closest('.partner');
-    function markMissing() { item.classList.add('is-missing'); }
-    if (img.complete && img.naturalWidth === 0) markMissing();
-    img.addEventListener('error', markMissing);
-  });
+  if (track) {
+    // Duplique la liste pour que l'animation (translateX -50 %) boucle sans coupure
+    Array.prototype.slice.call(track.children).forEach(function (item) {
+      var clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelector('img').alt = '';
+      track.appendChild(clone);
+    });
+    track.querySelectorAll('.partner img').forEach(function (img) {
+      var item = img.closest('.partner');
+      function markMissing() { item.classList.add('is-missing'); }
+      if (img.complete && img.naturalWidth === 0) markMissing();
+      img.addEventListener('error', markMissing);
+    });
+  }
 
   // Apparition des sections au défilement
-  var targets = document.querySelectorAll('.section-head, .card, .why__item, .sector, .step, .about__grid > *');
+  var targets = document.querySelectorAll('.section-head, .card, .why__item, .sector, .step, .about__grid > *, .vmv__card, .legal__grid > *, .leader__grid > *, .purpose__text, .purpose__cards li');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

@@ -34,3 +34,12 @@ les titres et catégories correspondants dans `index.html`.
 - `logo.png` : logo en couleurs, fond transparent (en-tête).
 - `logo-blanc.png` : version claire avec le toit rouge (pied de page, fond foncé).
 Pour changer le logo, remplacez ces deux fichiers en gardant les mêmes noms.
+
+## Page « SFS » (sfs.html)
+
+| Fichier | Emplacement | Taille conseillée |
+|---|---|---|
+| sfs-hero.jpg | Bandeau en haut de page | 1920 × 600 |
+| sfs-siege.jpg | Photo du siège (« Qui sommes-nous ? ») | 800 × 600 |
+| dirigeant.jpg | Portrait du gérant | 700 × 740 |
+| sfs-cta.jpg | Bandeau « Bâtissons des projets durables » | 1920 × 500 |
