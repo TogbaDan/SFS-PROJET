@@ -252,31 +252,34 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
 .step h3 { font-size: .88rem; }
 .step p { font-size: .78rem; color: var(--muted); margin: 0; }
 
-/* ---------- Catalogue ---------- */
-.catalog {
-  position: relative; color: #fff; overflow: hidden;
+/* ---------- Réalisations ---------- */
+.works {
+  position: relative; color: #fff; overflow: hidden; padding: 60px 0;
   background: linear-gradient(115deg, var(--navy-dark) 0%, var(--navy) 55%, #16398a 100%);
 }
-.catalog::after { /* bande rouge diagonale */
-  content: ""; position: absolute; right: -80px; bottom: -40px; width: 380px; height: 260px;
+.works::after { /* bande rouge diagonale */
+  content: ""; position: absolute; right: -120px; bottom: -60px; width: 420px; height: 240px;
   background: var(--red); transform: skewX(-35deg);
 }
-.catalog__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.3fr 1fr; align-items: center; min-height: 250px; }
-.catalog h2 { color: #fff; }
-.catalog__text { padding: 40px 0; }
-.catalog__text p { opacity: .9; max-width: 440px; }
-.catalog__book { position: relative; height: 250px; }
-.book {
-  position: absolute; right: 60px; top: 10px; width: 210px; height: 270px;
-  background: #fff; color: var(--navy); border-radius: 4px 10px 10px 4px;
-  box-shadow: -14px 18px 30px rgba(0,0,0,.35); transform: rotate(-8deg);
-  padding: 22px 20px; display: flex; flex-direction: column; gap: 14px;
-  border-left: 10px solid var(--red);
+.works__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1.35fr; gap: 48px; align-items: center; }
+.works h2 { color: #fff; }
+.works__text p { opacity: .9; max-width: 440px; }
+.works__text .btn-row { margin-top: 24px; }
+.works__gallery { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; height: 340px; }
+.work { position: relative; display: block; border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,.3); }
+.work--main { grid-row: 1 / 3; }
+.work .media { position: absolute; inset: 0; }
+.work .media img { transition: transform .6s; }
+.work:hover .media img { transform: scale(1.07); }
+.work::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8,29,77,.9) 0%, rgba(8,29,77,0) 60%); }
+.work__caption { position: absolute; z-index: 1; left: 16px; right: 16px; bottom: 14px; }
+.work__caption h3 { color: #fff; font-size: .9rem; margin: 6px 0 0; }
+.work--main .work__caption h3 { font-size: 1.1rem; }
+.work__tag {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 2px;
+  background: var(--yellow); color: var(--navy-dark);
+  font-family: var(--font-title); font-weight: 700; font-size: .65rem; text-transform: uppercase;
 }
-.book__logo { font-family: var(--font-title); font-weight: 800; font-style: italic; font-size: 1.6rem; }
-.book__title { font-family: var(--font-title); font-weight: 800; text-transform: uppercase; font-size: 1.05rem; line-height: 1.15; }
-.book__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto; }
-.book__grid i { display: grid; place-items: center; height: 46px; background: var(--bg-soft); color: var(--yellow); font-size: 1.4rem; border-radius: 4px; }
 
 /* ---------- CTA ---------- */
 .cta { position: relative; background: var(--navy-dark); color: #fff; overflow: hidden; }
@@ -384,9 +387,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   .why__item:nth-child(3) { border-left: 0; }
   .sectors__grid { grid-template-columns: 1fr; gap: 24px; background: none; }
   .cards--3 { grid-template-columns: 1fr 1fr; }
-  .catalog__inner { grid-template-columns: 1fr; }
-  .catalog__book { display: none; }
-  .catalog::after { width: 200px; height: 120px; }
+  .works__inner { grid-template-columns: 1fr; gap: 32px; }
+  .works::after { width: 200px; height: 120px; }
 }
 
 @media (max-width: 640px) {
@@ -410,6 +412,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   .steps { grid-template-columns: 1fr; }
   .step + .step::before { display: none; }
   .cta__media::after { background: rgba(8,29,77,.88); }
+  .works__gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 150px; height: auto; }
+  .work--main { grid-row: auto; grid-column: 1 / -1; }
   .partner { width: 130px; margin-right: 24px; }
   .footer__grid { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; text-align: center; }

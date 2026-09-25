@@ -22,3 +22,9 @@ Ils défilent en continu (pause au survol), en gris puis en couleur au survol.
 Tant qu'un logo est absent, le nom du partenaire s'affiche à sa place.
 Pour ajouter un partenaire, copiez un bloc `<li class="partner">` dans `index.html`
 (section « Partenaires ») et changez le nom du fichier.
+
+## Réalisations
+
+`real-1.jpg` (grande vignette, 900 × 700), `real-2.jpg` et `real-3.jpg` (600 × 400) :
+photos de vos projets pour la section « Nos réalisations ». Pensez à adapter
+les titres et catégories correspondants dans `index.html`.
