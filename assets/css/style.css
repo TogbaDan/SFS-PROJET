@@ -585,3 +585,69 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   .flow { grid-template-columns: 1fr; }
   .flow__step::before { display: none; }
 }
+
+/* =========================================================
+   Page « Réalisations »
+   ========================================================= */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.projects__intro { max-width: 880px; margin-bottom: 30px; }
+.projects__intro h2 { font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1.25; }
+.highlight { background: var(--red); color: #fff; padding: 0 .25em; border-radius: 3px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+.filters { display: flex; gap: 18px; align-items: center; }
+.filters__field { flex: 1; min-width: 0; }
+.filters__field select {
+  width: 100%; appearance: none; -webkit-appearance: none; cursor: pointer;
+  font: inherit; font-size: .9rem; color: var(--navy);
+  padding: 13px 44px 13px 18px; border: 1px solid #c9d3e8; border-radius: var(--radius);
+  background: #f4f7fd url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230b2a6f' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 18px center;
+  transition: border-color .2s, box-shadow .2s;
+}
+.filters__field select:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(11,42,111,.12); }
+.filters__reset { color: var(--red); font-family: var(--font-title); font-weight: 700; font-size: .75rem; text-transform: uppercase; white-space: nowrap; }
+.filters__reset[hidden] { display: none; }
+.filters__count { font-size: .82rem; color: var(--muted); margin: 12px 0 18px; }
+
+.rea-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.rea[hidden] { display: none; }
+.rea a { position: relative; display: grid; place-items: center; height: 190px; border-radius: var(--radius); overflow: hidden; background: var(--navy); color: #fff; text-align: center; }
+.rea__img { position: absolute; inset: 0; }
+.rea__img img { transition: transform .6s; }
+.rea a::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(11,42,111,.62); transition: background .3s; }
+.rea__title {
+  position: relative; z-index: 2; padding: 0 16px;
+  font-family: var(--font-title); font-weight: 800; font-size: 1.15rem; line-height: 1.2; text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0,0,0,.35); transition: transform .3s;
+}
+.rea__more {
+  position: absolute; z-index: 2; left: 50%; bottom: 18px; transform: translate(-50%, 10px); opacity: 0;
+  font-family: var(--font-title); font-weight: 700; font-size: .7rem; text-transform: uppercase; color: var(--yellow);
+  transition: opacity .3s, transform .3s;
+}
+.rea a:hover::before, .rea a:focus-visible::before { background: rgba(8,29,77,.8); }
+.rea a:hover .rea__img img { transform: scale(1.08); }
+.rea a:hover .rea__title, .rea a:focus-visible .rea__title { transform: translateY(-8px); }
+.rea a:hover .rea__more, .rea a:focus-visible .rea__more { opacity: 1; transform: translate(-50%, 0); }
+.rea a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+.rea-empty { text-align: center; color: var(--muted); padding: 40px 0; }
+.rea-empty .link-more { display: block; margin: 10px auto 0; }
+
+/* Appel à l'action clair */
+.cta--light { background: #eaf0fb; color: var(--text); }
+.cta--light .cta__media { background: linear-gradient(135deg, #dfe7f7, #c9d6ef); }
+.cta--light .cta__media::after { background: linear-gradient(90deg, rgba(234,240,251,.97) 0%, rgba(234,240,251,.9) 55%, rgba(234,240,251,.75) 100%); }
+.cta--light .cta__inner { justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; padding-top: 48px; padding-bottom: 48px; }
+.cta--light h2 { color: var(--navy); font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.cta--light p { color: var(--muted); opacity: 1; }
+.cta--light .eyebrow { color: var(--navy); }
+
+@media (max-width: 960px) {
+  .rea-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .filters { flex-direction: column; align-items: stretch; gap: 12px; }
+  .filters__reset { align-self: flex-start; }
+  .rea-grid { grid-template-columns: 1fr; }
+  .rea a { height: 160px; }
+  .cta--light .cta__media::after { background: rgba(234,240,251,.94); }
+}

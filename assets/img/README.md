@@ -50,3 +50,9 @@ Pour changer le logo, remplacez ces deux fichiers en gardant les mêmes noms.
 - Vignettes des services (800 × 520) : `srv-electricite.jpg`, `srv-hydraulique.jpg`,
   `srv-construction.jpg`, `srv-epi.jpg`, `srv-informatique.jpg`, `srv-agricole.jpg`,
   `srv-transport.jpg`, `srv-location.jpg`, `srv-restauration.jpg`, `srv-import-export.jpg`.
+
+## Page « Réalisations » (realisations.html)
+
+- `realisations-hero.jpg` (1920 × 600) : bandeau du haut ; `realisations-cta.jpg` (1920 × 500) : bandeau final.
+- Vignettes propres à cette page (800 × 400) : `rea-btp.jpg`, `rea-infrastructures.jpg`, `rea-fournitures.jpg`.
+- Les autres vignettes réutilisent les photos de la page Services (`srv-*.jpg`).

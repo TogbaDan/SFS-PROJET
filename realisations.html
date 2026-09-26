@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos réalisations – SFS, Société de Fournitures et de Services</title>
+  <meta name="description" content="Découvrez les réalisations de SFS en Côte d'Ivoire : BTP, matériels électriques et hydrauliques, EPI, informatique, agriculture, transport, location, événementiel et import-export.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Barre supérieure ===== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <ul class="social">
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+      <ul class="topbar__info">
+        <li><i class="fas fa-phone-alt"></i> <a href="tel:+2250500000075">+225 05 00 00 00 75</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></li>
+        <li><i class="far fa-clock"></i> Lun. au Ven. 08h00 à 18h00</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== En-tête / navigation ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="SFS BTP – Société de Fournitures et de Services" width="1000" height="477">
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="sfs.html">SFS</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html" class="active" aria-current="page">Réalisations</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="#contact" class="btn btn--red btn--sm">Demander un devis</a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Bandeau de page ===== -->
+    <section class="page-hero">
+      <div class="page-hero__bg media"><img src="assets/img/realisations-hero.jpg" alt=""></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li aria-current="page">Réalisations</li>
+          </ol>
+        </nav>
+        <h1>Nos réalisations</h1>
+        <p>Des projets concrets, des solutions adaptées au service de nos clients.</p>
+      </div>
+    </section>
+
+    <!-- ===== Projets ===== -->
+    <section class="section projects">
+      <div class="container">
+        <div class="projects__intro">
+          <p class="eyebrow">Nos projets</p>
+          <h2>Les entreprises qui nous font confiance et pour lesquelles nous mettons notre <mark class="highlight">expertise</mark> au service de leurs projets</h2>
+        </div>
+
+        <form class="filters" id="projectFilters" aria-label="Filtrer les réalisations">
+          <label class="filters__field">
+            <span class="sr-only">Secteur</span>
+            <select name="secteur">
+              <option value="">Tous les secteurs</option>
+              <option value="btp">BTP &amp; Construction</option>
+              <option value="entreprises">Entreprises</option>
+              <option value="public">Administrations &amp; secteur public</option>
+              <option value="agriculture">Agriculture</option>
+              <option value="evenementiel">Événementiel</option>
+            </select>
+          </label>
+          <label class="filters__field">
+            <span class="sr-only">Type de prestation</span>
+            <select name="prestation">
+              <option value="">Tous les types de prestation</option>
+              <option value="fourniture">Fourniture de matériels</option>
+              <option value="transport">Transport &amp; logistique</option>
+              <option value="location">Location</option>
+              <option value="services">Restauration &amp; services</option>
+              <option value="import">Import-export</option>
+            </select>
+          </label>
+          <button type="reset" class="filters__reset" hidden><i class="fas fa-times"></i> Réinitialiser</button>
+        </form>
+        <p class="filters__count" id="projectCount" aria-live="polite"></p>
+
+        <ul class="rea-grid" id="projectGrid">
+          <li class="rea" data-secteur="btp" data-prestation="fourniture">
+            <a href="services.html#construction">
+              <span class="rea__img media"><img src="assets/img/rea-btp.jpg" alt="Immeuble en construction" loading="lazy"></span>
+              <span class="rea__title">BTP &amp;<br>Construction</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="btp entreprises" data-prestation="fourniture">
+            <a href="services.html#electricite">
+              <span class="rea__img media"><img src="assets/img/srv-electricite.jpg" alt="Armoire électrique" loading="lazy"></span>
+              <span class="rea__title">Matériels<br>électriques</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="btp" data-prestation="fourniture">
+            <a href="services.html#hydraulique">
+              <span class="rea__img media"><img src="assets/img/srv-hydraulique.jpg" alt="Canalisations hydrauliques" loading="lazy"></span>
+              <span class="rea__title">Matériels<br>hydrauliques</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="btp entreprises" data-prestation="fourniture">
+            <a href="services.html#epi">
+              <span class="rea__img media"><img src="assets/img/srv-epi.jpg" alt="Équipements de protection individuelle" loading="lazy"></span>
+              <span class="rea__title">Équipements<br>de protection</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="entreprises public" data-prestation="fourniture">
+            <a href="services.html#informatique">
+              <span class="rea__img media"><img src="assets/img/srv-informatique.jpg" alt="Matériel informatique de bureau" loading="lazy"></span>
+              <span class="rea__title">Fournitures<br>informatiques</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="agriculture" data-prestation="fourniture">
+            <a href="services.html#agricole">
+              <span class="rea__img media"><img src="assets/img/srv-agricole.jpg" alt="Tracteur agricole" loading="lazy"></span>
+              <span class="rea__title">Matériels<br>agricoles</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="entreprises public evenementiel" data-prestation="transport">
+            <a href="services.html#transport">
+              <span class="rea__img media"><img src="assets/img/srv-transport.jpg" alt="Minibus de transport de personnel" loading="lazy"></span>
+              <span class="rea__title">Transport &amp;<br>logistique</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="btp evenementiel" data-prestation="location">
+            <a href="services.html#location">
+              <span class="rea__img media"><img src="assets/img/srv-location.jpg" alt="Engin de chantier" loading="lazy"></span>
+              <span class="rea__title">Location</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="evenementiel entreprises" data-prestation="services">
+            <a href="services.html#restauration">
+              <span class="rea__img media"><img src="assets/img/srv-restauration.jpg" alt="Buffet événementiel" loading="lazy"></span>
+              <span class="rea__title">Événementiel</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="entreprises" data-prestation="import">
+            <a href="services.html#import-export">
+              <span class="rea__img media"><img src="assets/img/srv-import-export.jpg" alt="Conteneurs sur un port" loading="lazy"></span>
+              <span class="rea__title">Import-export</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="public btp" data-prestation="fourniture">
+            <a href="services.html">
+              <span class="rea__img media"><img src="assets/img/rea-infrastructures.jpg" alt="Bâtiment public" loading="lazy"></span>
+              <span class="rea__title">Infrastructures<br>publiques</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+          <li class="rea" data-secteur="entreprises public" data-prestation="fourniture">
+            <a href="services.html">
+              <span class="rea__img media"><img src="assets/img/rea-fournitures.jpg" alt="Entrepôt de fournitures" loading="lazy"></span>
+              <span class="rea__title">Fournitures<br>générales</span>
+              <span class="rea__more">Découvrir <i class="fas fa-arrow-right"></i></span>
+            </a>
+          </li>
+        </ul>
+        <p class="rea-empty" id="projectEmpty" hidden>Aucune réalisation ne correspond à ces critères. <button type="button" class="link-more" id="projectEmptyReset">Voir toutes les réalisations</button></p>
+      </div>
+    </section>
+
+    <!-- ===== Appel à l'action ===== -->
+    <section class="cta cta--light" id="contact">
+      <div class="cta__media media"><img src="assets/img/realisations-cta.jpg" alt="" loading="lazy"></div>
+      <div class="container cta__inner">
+        <div class="cta__text">
+          <p class="eyebrow">Vous avez un projet similaire ?</p>
+          <h2>Discutons de votre projet</h2>
+          <p>Notre équipe est à votre écoute pour vous proposer des solutions adaptées à vos besoins, vos délais et votre budget.</p>
+        </div>
+        <div class="btn-row">
+          <a href="mailto:contact@sfs-ci.com?subject=Demande%20de%20devis" class="btn btn--red">Demander un devis <i class="fas fa-chevron-right"></i></a>
+          <a href="mailto:contact@sfs-ci.com" class="btn btn--outline">Nous contacter <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Pied de page ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--footer">
+          <img src="assets/img/logo-blanc.png" alt="SFS BTP – Société de Fournitures et de Services" width="1000" height="477" loading="lazy">
+        </a>
+        <p>SFS accompagne les entreprises, administrations et organisations dans leurs besoins en fournitures, équipements et services spécialisés.</p>
+        <p>Notre ambition : devenir un partenaire B2B de référence en Côte d'Ivoire.</p>
+        <ul class="social social--round">
+          <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Liens utiles</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="sfs.html">SFS</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nos solutions</h4>
+        <ul class="footer__links">
+          <li><a href="services.html#electricite">Matériels électriques</a></li>
+          <li><a href="services.html#hydraulique">Matériels hydrauliques et sanitaires</a></li>
+          <li><a href="services.html#construction">Matériels de construction</a></li>
+          <li><a href="services.html#epi">Équipements de protection</a></li>
+          <li><a href="services.html#informatique">Fournitures informatiques</a></li>
+          <li><a href="services.html#transport">Transport de personnel</a></li>
+          <li><a href="services.html#location">Location / Événementiel</a></li>
+          <li><a href="services.html#agricole">Matériels agricoles / Import-export</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contactez-nous</h4>
+        <ul class="footer__contact">
+          <li><i class="fas fa-map-marker-alt"></i><span>Cocody Anono Extension<br>01 BP 6105 Abidjan 01</span></li>
+          <li><i class="fas fa-phone-alt"></i><a href="tel:+2250500000075">+225 05 00 00 00 75</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></li>
+          <li><i class="far fa-clock"></i><span>Lun. au Ven. 08h00 à 18h00</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>©<span id="year">2026</span> Société de Fournitures et de Services. Tous droits réservés. <span class="sep">|</span> Site conçu par BD DIGITAL.</p>
+      <p><a href="#">Mentions légales</a> <span class="sep">|</span> <a href="#">Politique de confidentialité</a></p>
+    </div>
+    <button class="to-top" id="toTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -74,8 +74,35 @@
     });
   }
 
+  // Filtres de la page Réalisations
+  var filters = document.getElementById('projectFilters');
+  if (filters) {
+    var items = document.querySelectorAll('#projectGrid .rea');
+    var count = document.getElementById('projectCount');
+    var empty = document.getElementById('projectEmpty');
+    var reset = filters.querySelector('.filters__reset');
+    function applyFilters() {
+      var secteur = filters.elements.secteur.value;
+      var prestation = filters.elements.prestation.value;
+      var visible = 0;
+      items.forEach(function (item) {
+        var ok = (!secteur || item.dataset.secteur.split(' ').indexOf(secteur) > -1) &&
+                 (!prestation || item.dataset.prestation.split(' ').indexOf(prestation) > -1);
+        item.hidden = !ok;
+        if (ok) visible++;
+      });
+      count.textContent = visible + (visible > 1 ? ' domaines de réalisation' : ' domaine de réalisation');
+      empty.hidden = visible > 0;
+      reset.hidden = !secteur && !prestation;
+    }
+    filters.addEventListener('change', applyFilters);
+    filters.addEventListener('reset', function () { setTimeout(applyFilters, 0); });
+    document.getElementById('projectEmptyReset').addEventListener('click', function () { filters.reset(); });
+    applyFilters();
+  }
+
   // Apparition des sections au défilement
-  var targets = document.querySelectorAll('.section-head, .card, .why__item, .sector, .step, .about__grid > *, .vmv__card, .leader__grid > *, .purpose__text, .purpose__cards li, .srv, .flow__step');
+  var targets = document.querySelectorAll('.section-head, .card, .why__item, .sector, .step, .about__grid > *, .vmv__card, .leader__grid > *, .purpose__text, .purpose__cards li, .srv, .flow__step, .rea');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
