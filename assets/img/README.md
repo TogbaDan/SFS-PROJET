@@ -43,3 +43,10 @@ Pour changer le logo, remplacez ces deux fichiers en gardant les mêmes noms.
 | sfs-siege.jpg | Photo du siège (« Qui sommes-nous ? ») | 800 × 600 |
 | dirigeant.jpg | Portrait du gérant | 700 × 740 |
 | sfs-cta.jpg | Bandeau « Bâtissons des projets durables » | 1920 × 500 |
+
+## Page « Services » (services.html)
+
+- `services-hero.jpg` (1920 × 600) : bandeau du haut ; `services-cta.jpg` (1920 × 500) : bandeau final.
+- Vignettes des services (800 × 520) : `srv-electricite.jpg`, `srv-hydraulique.jpg`,
+  `srv-construction.jpg`, `srv-epi.jpg`, `srv-informatique.jpg`, `srv-agricole.jpg`,
+  `srv-transport.jpg`, `srv-location.jpg`, `srv-restauration.jpg`, `srv-import-export.jpg`.
