@@ -325,7 +325,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
 .social--round a { width: 32px; height: 32px; background: #fff; color: var(--footer); font-size: .8rem; }
 .footer__bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; padding-bottom: 22px; font-size: .78rem; }
 .footer__bottom p { margin: 0; }
-.footer__bottom span { margin: 0 8px; opacity: .5; }
+.footer__bottom .sep { margin: 0 8px; opacity: .5; }
 .to-top {
   position: fixed; right: 24px; bottom: 24px; z-index: 60; width: 44px; height: 44px; border-radius: 50%;
   background: var(--red); color: #fff; box-shadow: 0 6px 16px rgba(227,35,44,.4);
