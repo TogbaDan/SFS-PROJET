@@ -56,3 +56,10 @@ Pour changer le logo, remplacez ces deux fichiers en gardant les mêmes noms.
 - `realisations-hero.jpg` (1920 × 600) : bandeau du haut ; `realisations-cta.jpg` (1920 × 500) : bandeau final.
 - Vignettes propres à cette page (800 × 400) : `rea-btp.jpg`, `rea-infrastructures.jpg`, `rea-fournitures.jpg`.
 - Les autres vignettes réutilisent les photos de la page Services (`srv-*.jpg`).
+
+## Page « Blog » (blog.html)
+
+- `blog-hero.jpg` (1920 × 600) : bandeau du haut ; `blog-cta.jpg` (1920 × 500) : bandeau final.
+- `blog-approvisionnement.jpg` (1200 × 800) : article à la une.
+- Vignettes d'articles (800 × 500) : `blog-epi.jpg`, `blog-bureau.jpg`, `blog-materiaux.jpg`,
+  `blog-transport.jpg`, `blog-electricite.jpg`, `blog-hydraulique.jpg`.

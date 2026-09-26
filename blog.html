@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – SFS, Société de Fournitures et de Services</title>
+  <meta name="description" content="Conseils, actualités et ressources de SFS pour vos projets d'approvisionnement, d'équipement et de services en Côte d'Ivoire.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Barre supérieure ===== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <ul class="social">
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+      <ul class="topbar__info">
+        <li><i class="fas fa-phone-alt"></i> <a href="tel:+2250500000075">+225 05 00 00 00 75</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></li>
+        <li><i class="far fa-clock"></i> Lun. au Ven. 08h00 à 18h00</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== En-tête / navigation ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="SFS BTP – Société de Fournitures et de Services" width="1000" height="477">
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="sfs.html">SFS</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="#contact" class="btn btn--red btn--sm">Demander un devis</a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Bandeau de page ===== -->
+    <section class="page-hero">
+      <div class="page-hero__bg media"><img src="assets/img/blog-hero.jpg" alt=""></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li aria-current="page">Blog</li>
+          </ol>
+        </nav>
+        <h1>Notre blog</h1>
+        <p>Conseils, actualités et informations pour vous accompagner dans vos projets.</p>
+      </div>
+    </section>
+
+    <!-- ===== Articles ===== -->
+    <section class="section blog">
+      <div class="container">
+        <div class="blog__head">
+          <div class="blog__intro">
+            <p class="eyebrow">Notre blog</p>
+            <h2>Conseils, <span class="text-red">actualités</span> et ressources</h2>
+            <p>Des contenus pratiques pour vous accompagner dans vos projets d'approvisionnement, d'équipement et de services.</p>
+          </div>
+          <ul class="chips-filter" id="blogFilters" aria-label="Filtrer par thème">
+            <li><button type="button" class="chip is-active" data-cat="" aria-pressed="true">Tous <span class="chip__count"></span></button></li>
+            <li><button type="button" class="chip" data-cat="approvisionnement" aria-pressed="false">Approvisionnement <span class="chip__count"></span></button></li>
+            <li><button type="button" class="chip" data-cat="materiaux" aria-pressed="false">Matériaux <span class="chip__count"></span></button></li>
+            <li><button type="button" class="chip" data-cat="securite" aria-pressed="false">Sécurité <span class="chip__count"></span></button></li>
+            <li><button type="button" class="chip" data-cat="bureau" aria-pressed="false">Bureau &amp; informatique <span class="chip__count"></span></button></li>
+            <li><button type="button" class="chip" data-cat="logistique" aria-pressed="false">Logistique <span class="chip__count"></span></button></li>
+          </ul>
+        </div>
+
+        <!-- Article à la une -->
+        <article class="featured" id="art-approvisionnement" data-cat="approvisionnement">
+          <a href="#art-approvisionnement" class="featured__img media">
+            <img src="assets/img/blog-approvisionnement.jpg" alt="Magasinier consultant une tablette dans un entrepôt" loading="lazy">
+            <span class="featured__flag"><i class="fas fa-star"></i> À la une</span>
+          </a>
+          <div class="featured__body">
+            <div class="post__meta"><span class="post__cat">Approvisionnement</span><time datetime="2026-09-08">8 septembre 2026</time></div>
+            <h2><a href="#art-approvisionnement">Comment bien gérer l'approvisionnement dans votre entreprise ?</a></h2>
+            <p>Découvrez nos conseils pour optimiser vos achats, sécuriser vos stocks et garantir la continuité de vos activités.</p>
+            <div class="post__foot">
+              <a href="#art-approvisionnement" class="btn btn--red">Lire l'article <i class="fas fa-arrow-right"></i></a>
+              <span class="post__time"><i class="far fa-clock"></i> 6 min de lecture</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="posts" id="blogGrid">
+          <article class="post" id="art-epi" data-cat="securite">
+            <div class="post__meta"><time datetime="2026-09-12">12 septembre 2026</time></div>
+            <a href="#art-epi" class="post__img media"><img src="assets/img/blog-epi.jpg" alt="Casque, lunettes et gants de protection" loading="lazy"><span class="post__badge">Sécurité</span></a>
+            <div class="post__body">
+              <h3><a href="#art-epi">Comment bien choisir ses équipements de protection individuelle ?</a></h3>
+              <p>Casques, gants, lunettes, chaussures : les critères essentiels pour protéger efficacement vos équipes sur le terrain.</p>
+              <div class="post__foot">
+                <a href="#art-epi" class="read-more"><i class="fas fa-arrow-right"></i> Lire plus</a>
+                <span class="post__time"><i class="far fa-clock"></i> 4 min</span>
+              </div>
+            </div>
+          </article>
+          <article class="post" id="art-bureau" data-cat="bureau">
+            <div class="post__meta"><time datetime="2026-09-05">5 septembre 2026</time></div>
+            <a href="#art-bureau" class="post__img media"><img src="assets/img/blog-bureau.jpg" alt="Poste de travail avec ordinateur et fournitures" loading="lazy"><span class="post__badge">Bureau &amp; informatique</span></a>
+            <div class="post__body">
+              <h3><a href="#art-bureau">Les fournitures indispensables pour une entreprise bien organisée</a></h3>
+              <p>Consommables, papeterie, matériel informatique : la liste des indispensables pour un quotidien de travail fluide.</p>
+              <div class="post__foot">
+                <a href="#art-bureau" class="read-more"><i class="fas fa-arrow-right"></i> Lire plus</a>
+                <span class="post__time"><i class="far fa-clock"></i> 3 min</span>
+              </div>
+            </div>
+          </article>
+          <article class="post" id="art-materiaux" data-cat="materiaux">
+            <div class="post__meta"><time datetime="2026-08-28">28 août 2026</time></div>
+            <a href="#art-materiaux" class="post__img media"><img src="assets/img/blog-materiaux.jpg" alt="Chantier et matériaux de construction" loading="lazy"><span class="post__badge">Matériaux</span></a>
+            <div class="post__body">
+              <h3><a href="#art-materiaux">Quels critères prendre en compte avant l'achat de matériaux de construction ?</a></h3>
+              <p>Qualité, quantité, délais, budget : les points à vérifier avant de lancer vos commandes de matériaux.</p>
+              <div class="post__foot">
+                <a href="#art-materiaux" class="read-more"><i class="fas fa-arrow-right"></i> Lire plus</a>
+                <span class="post__time"><i class="far fa-clock"></i> 5 min</span>
+              </div>
+            </div>
+          </article>
+          <article class="post" id="art-transport" data-cat="logistique">
+            <div class="post__meta"><time datetime="2026-08-20">20 août 2026</time></div>
+            <a href="#art-transport" class="post__img media"><img src="assets/img/blog-transport.jpg" alt="Minibus de transport de personnel" loading="lazy"><span class="post__badge">Logistique</span></a>
+            <div class="post__body">
+              <h3><a href="#art-transport">Transport de personnel : comment choisir le bon prestataire ?</a></h3>
+              <p>Sécurité, ponctualité, confort : ce qu'il faut vérifier avant de confier le transport de vos équipes.</p>
+              <div class="post__foot">
+                <a href="#art-transport" class="read-more"><i class="fas fa-arrow-right"></i> Lire plus</a>
+                <span class="post__time"><i class="far fa-clock"></i> 4 min</span>
+              </div>
+            </div>
+          </article>
+          <article class="post" id="art-electricite" data-cat="materiaux">
+            <div class="post__meta"><time datetime="2026-04-10">10 avril 2026</time></div>
+            <a href="#art-electricite" class="post__img media"><img src="assets/img/blog-electricite.jpg" alt="Technicien intervenant sur un tableau électrique" loading="lazy"><span class="post__badge">Matériaux</span></a>
+            <div class="post__body">
+              <h3><a href="#art-electricite">Bien choisir ses matériaux électriques pour ses projets</a></h3>
+              <p>Normes, qualité, compatibilité : nos repères pour sélectionner des équipements électriques fiables et durables.</p>
+              <div class="post__foot">
+                <a href="#art-electricite" class="read-more"><i class="fas fa-arrow-right"></i> Lire plus</a>
+                <span class="post__time"><i class="far fa-clock"></i> 4 min</span>
+              </div>
+            </div>
+          </article>
+          <article class="post" id="art-hydraulique" data-cat="materiaux">
+            <div class="post__meta"><time datetime="2026-03-16">16 mars 2026</time></div>
+            <a href="#art-hydraulique" class="post__img media"><img src="assets/img/blog-hydraulique.jpg" alt="Robinetterie et canalisations" loading="lazy"><span class="post__badge">Matériaux</span></a>
+            <div class="post__body">
+              <h3><a href="#art-hydraulique">Tout savoir sur les matériaux hydrauliques et sanitaires</a></h3>
+              <p>Tuyauterie, raccords, robinetterie : l'essentiel pour réussir vos installations hydrauliques et sanitaires.</p>
+              <div class="post__foot">
+                <a href="#art-hydraulique" class="read-more"><i class="fas fa-arrow-right"></i> Lire plus</a>
+                <span class="post__time"><i class="far fa-clock"></i> 4 min</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="rea-empty" id="blogEmpty" hidden>Aucun article dans cette catégorie pour le moment.</p>
+      </div>
+    </section>
+
+    <!-- ===== Appel à l'action ===== -->
+    <section class="cta cta--center" id="contact">
+      <div class="cta__media media"><img src="assets/img/blog-cta.jpg" alt="" loading="lazy"></div>
+      <div class="container cta__inner">
+        <div class="cta__text">
+          <p class="eyebrow eyebrow--light">Travaillons ensemble</p>
+          <h2>Un projet ? Parlons-en !</h2>
+          <p>Notre équipe est à votre écoute pour vous proposer des solutions adaptées à vos besoins.</p>
+        </div>
+        <div class="btn-row">
+          <a href="mailto:contact@sfs-ci.com?subject=Demande%20de%20devis" class="btn btn--red">Demander un devis <i class="fas fa-chevron-right"></i></a>
+          <a href="mailto:contact@sfs-ci.com" class="btn btn--ghost">Nous contacter <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Pied de page ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--footer">
+          <img src="assets/img/logo-blanc.png" alt="SFS BTP – Société de Fournitures et de Services" width="1000" height="477" loading="lazy">
+        </a>
+        <p>SFS accompagne les entreprises, administrations et organisations dans leurs besoins en fournitures, équipements et services spécialisés.</p>
+        <p>Notre ambition : devenir un partenaire B2B de référence en Côte d'Ivoire.</p>
+        <ul class="social social--round">
+          <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Liens utiles</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="sfs.html">SFS</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nos solutions</h4>
+        <ul class="footer__links">
+          <li><a href="services.html#electricite">Matériels électriques</a></li>
+          <li><a href="services.html#hydraulique">Matériels hydrauliques et sanitaires</a></li>
+          <li><a href="services.html#construction">Matériels de construction</a></li>
+          <li><a href="services.html#epi">Équipements de protection</a></li>
+          <li><a href="services.html#informatique">Fournitures informatiques</a></li>
+          <li><a href="services.html#transport">Transport de personnel</a></li>
+          <li><a href="services.html#location">Location / Événementiel</a></li>
+          <li><a href="services.html#agricole">Matériels agricoles / Import-export</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contactez-nous</h4>
+        <ul class="footer__contact">
+          <li><i class="fas fa-map-marker-alt"></i><span>Cocody Anono Extension<br>01 BP 6105 Abidjan 01</span></li>
+          <li><i class="fas fa-phone-alt"></i><a href="tel:+2250500000075">+225 05 00 00 00 75</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></li>
+          <li><i class="far fa-clock"></i><span>Lun. au Ven. 08h00 à 18h00</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>©<span id="year">2026</span> Société de Fournitures et de Services. Tous droits réservés. <span class="sep">|</span> Site conçu par BD DIGITAL.</p>
+      <p><a href="#">Mentions légales</a> <span class="sep">|</span> <a href="#">Politique de confidentialité</a></p>
+    </div>
+    <button class="to-top" id="toTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

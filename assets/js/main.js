@@ -101,8 +101,34 @@
     applyFilters();
   }
 
+  // Filtre par thème de la page Blog
+  var chips = document.querySelectorAll('#blogFilters .chip');
+  if (chips.length) {
+    var posts = document.querySelectorAll('.featured, #blogGrid .post');
+    var blogEmpty = document.getElementById('blogEmpty');
+    chips.forEach(function (chip) {
+      var cat = chip.dataset.cat;
+      var n = 0;
+      posts.forEach(function (post) { if (!cat || post.dataset.cat === cat) n++; });
+      chip.querySelector('.chip__count').textContent = n;
+      chip.addEventListener('click', function () {
+        var shown = 0;
+        chips.forEach(function (c) {
+          c.classList.toggle('is-active', c === chip);
+          c.setAttribute('aria-pressed', c === chip);
+        });
+        posts.forEach(function (post) {
+          var ok = !cat || post.dataset.cat === cat;
+          post.hidden = !ok;
+          if (ok) shown++;
+        });
+        blogEmpty.hidden = shown > 0;
+      });
+    });
+  }
+
   // Apparition des sections au défilement
-  var targets = document.querySelectorAll('.section-head, .card, .why__item, .sector, .step, .about__grid > *, .vmv__card, .leader__grid > *, .purpose__text, .purpose__cards li, .srv, .flow__step, .rea');
+  var targets = document.querySelectorAll('.section-head, .card, .why__item, .sector, .step, .about__grid > *, .vmv__card, .leader__grid > *, .purpose__text, .purpose__cards li, .srv, .flow__step, .rea, .post, .featured');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
