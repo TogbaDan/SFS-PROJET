@@ -63,3 +63,7 @@ Pour changer le logo, remplacez ces deux fichiers en gardant les mêmes noms.
 - `blog-approvisionnement.jpg` (1200 × 800) : article à la une.
 - Vignettes d'articles (800 × 500) : `blog-epi.jpg`, `blog-bureau.jpg`, `blog-materiaux.jpg`,
   `blog-transport.jpg`, `blog-electricite.jpg`, `blog-hydraulique.jpg`.
+
+## Page « Contact » (contact.html)
+
+- `contact-hero.jpg` (1920 × 600) : bandeau du haut.

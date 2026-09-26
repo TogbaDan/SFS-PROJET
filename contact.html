@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – SFS, Société de Fournitures et de Services</title>
+  <meta name="description" content="Contactez SFS à Abidjan : formulaire de contact, téléphone +225 05 00 00 00 75, e-mail ou prise de rendez-vous. Siège social à Cocody Anono Extension.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Barre supérieure ===== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <ul class="social">
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+      <ul class="topbar__info">
+        <li><i class="fas fa-phone-alt"></i> <a href="tel:+2250500000075">+225 05 00 00 00 75</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></li>
+        <li><i class="far fa-clock"></i> Lun. au Ven. 08h00 à 18h00</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== En-tête / navigation ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="SFS BTP – Société de Fournitures et de Services" width="1000" height="477">
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="sfs.html">SFS</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html?objet=devis#formulaire" class="btn btn--red btn--sm">Demander un devis</a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Bandeau de page ===== -->
+    <section class="page-hero">
+      <div class="page-hero__bg media"><img src="assets/img/contact-hero.jpg" alt=""></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li aria-current="page">Contact</li>
+          </ol>
+        </nav>
+        <h1>Contactez-nous</h1>
+        <p>Une question, un projet, un devis ? Notre équipe est à votre écoute.</p>
+      </div>
+    </section>
+
+    <!-- ===== Accès rapides ===== -->
+    <section class="quick">
+      <div class="container quick__grid">
+        <a href="tel:+2250500000075" class="quick__item">
+          <span class="quick__icon"><i class="fas fa-phone-alt"></i></span>
+          <span><small>Appelez-nous</small><strong>+225 05 00 00 00 75</strong></span>
+        </a>
+        <a href="mailto:contact@sfs-ci.com" class="quick__item">
+          <span class="quick__icon"><i class="fas fa-envelope"></i></span>
+          <span><small>Écrivez-nous</small><strong>contact@sfs-ci.com</strong></span>
+        </a>
+        <a href="#rendez-vous" class="quick__item" data-objet="rendez-vous">
+          <span class="quick__icon quick__icon--yellow"><i class="far fa-calendar-check"></i></span>
+          <span><small>Rencontrons-nous</small><strong>Prendre rendez-vous</strong></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== Formulaire + coordonnées ===== -->
+    <section class="section contact" id="formulaire">
+      <div class="container contact__grid">
+        <div class="contact__main">
+          <p class="eyebrow">Nous contacter</p>
+          <h2 class="contact__title">Formulaire, téléphone ou <span class="text-red">rendez-vous direct</span> dans notre agenda : c'est comme vous préférez !</h2>
+
+          <form class="form" id="contactForm" novalidate>
+            <div class="form__head">
+              <h3>Formulaire de contact</h3>
+              <p><span class="req">*</span> Champs obligatoires</p>
+            </div>
+
+            <div class="form__grid">
+              <div class="field">
+                <label for="nom">Nom <span class="req">*</span></label>
+                <div class="field__control"><i class="far fa-user"></i><input id="nom" name="nom" type="text" autocomplete="family-name" placeholder="Votre nom" required></div>
+                <p class="field__error">Merci d'indiquer votre nom.</p>
+              </div>
+              <div class="field">
+                <label for="prenom">Prénom <span class="req">*</span></label>
+                <div class="field__control"><i class="far fa-user"></i><input id="prenom" name="prenom" type="text" autocomplete="given-name" placeholder="Votre prénom" required></div>
+                <p class="field__error">Merci d'indiquer votre prénom.</p>
+              </div>
+              <div class="field">
+                <label for="email">E-mail <span class="req">*</span></label>
+                <div class="field__control"><i class="far fa-envelope"></i><input id="email" name="email" type="email" autocomplete="email" placeholder="votre@email.com" required></div>
+                <p class="field__error">Merci d'indiquer une adresse e-mail valide.</p>
+              </div>
+              <div class="field">
+                <label for="telephone">Téléphone <span class="req">*</span></label>
+                <div class="field__control"><i class="fas fa-phone-alt"></i><input id="telephone" name="telephone" type="tel" autocomplete="tel" placeholder="+225 07 00 00 00 00" pattern="[+0-9 ().-]{8,}" required></div>
+                <p class="field__error">Merci d'indiquer un numéro de téléphone valide.</p>
+              </div>
+              <div class="field field--full">
+                <label for="entreprise">Entreprise</label>
+                <div class="field__control"><i class="far fa-building"></i><input id="entreprise" name="entreprise" type="text" autocomplete="organization" placeholder="Nom de votre entreprise (optionnel)"></div>
+              </div>
+              <div class="field field--full">
+                <label for="objet">Objet de votre demande <span class="req">*</span></label>
+                <div class="field__control field__control--select"><i class="far fa-list-alt"></i>
+                  <select id="objet" name="objet" required>
+                    <option value="">Sélectionnez un objet</option>
+                    <option value="devis">Demande de devis</option>
+                    <option value="information">Demande d'information</option>
+                    <option value="rendez-vous">Prise de rendez-vous</option>
+                    <option value="partenariat">Partenariat / référencement fournisseur</option>
+                    <option value="suivi">Suivi de commande</option>
+                    <option value="autre">Autre demande</option>
+                  </select>
+                </div>
+                <p class="field__error">Merci de choisir l'objet de votre demande.</p>
+              </div>
+
+              <!-- Champs affichés uniquement pour une prise de rendez-vous -->
+              <div class="field field--rdv" hidden>
+                <label for="rdv-date">Date souhaitée <span class="req">*</span></label>
+                <div class="field__control"><i class="far fa-calendar"></i><input id="rdv-date" name="rdv-date" type="date"></div>
+                <p class="field__error">Merci de choisir un jour ouvré (lundi au vendredi) à venir.</p>
+              </div>
+              <div class="field field--rdv" hidden>
+                <label for="rdv-creneau">Créneau <span class="req">*</span></label>
+                <div class="field__control field__control--select"><i class="far fa-clock"></i>
+                  <select id="rdv-creneau" name="rdv-creneau">
+                    <option value="">Choisissez un créneau</option>
+                    <option>08h00 – 10h00</option>
+                    <option>10h00 – 12h00</option>
+                    <option>14h00 – 16h00</option>
+                    <option>16h00 – 18h00</option>
+                  </select>
+                </div>
+                <p class="field__error">Merci de choisir un créneau.</p>
+              </div>
+
+              <div class="field field--full">
+                <label for="message">Votre message <span class="req">*</span></label>
+                <div class="field__control field__control--area"><i class="far fa-comment-dots"></i><textarea id="message" name="message" rows="5" maxlength="2000" placeholder="Décrivez votre besoin, votre projet ou vos questions…" required></textarea></div>
+                <div class="field__foot"><p class="field__error">Merci de décrire votre demande.</p><span class="field__count" id="messageCount">0 / 2000</span></div>
+              </div>
+            </div>
+
+            <div class="field field--check">
+              <label class="check">
+                <input type="checkbox" id="consentement" name="consentement" required>
+                <span class="check__box"><i class="fas fa-check"></i></span>
+                <span>En cochant cette case, j'accepte que les informations saisies soient traitées dans le cadre de la demande d'information et de la relation commerciale qui peut en découler.</span>
+              </label>
+              <p class="field__error">Merci d'accepter le traitement de vos données pour envoyer votre demande.</p>
+            </div>
+
+            <div class="form__actions">
+              <button type="submit" class="btn btn--red btn--lg">Envoyer ma demande <i class="fas fa-paper-plane"></i></button>
+              <p class="form__secure"><i class="fas fa-lock"></i> Vos données restent confidentielles.</p>
+            </div>
+
+            <p class="form__legal">Pour connaître et exercer vos droits, notamment de retrait de votre consentement à l'utilisation des données collectées par ce formulaire, veuillez consulter notre page <a href="#">mentions légales</a>.</p>
+          </form>
+
+          <div class="form-success" id="formSuccess" hidden tabindex="-1">
+            <span class="form-success__icon"><i class="fas fa-check"></i></span>
+            <h3>Merci, votre demande est prête !</h3>
+            <p>Votre messagerie s'ouvre avec votre message déjà rédigé : il ne vous reste qu'à cliquer sur « Envoyer ». Si elle ne s'ouvre pas, écrivez-nous directement à <a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a> ou appelez le <a href="tel:+2250500000075">+225 05 00 00 00 75</a>.</p>
+            <button type="button" class="btn btn--outline" id="formRestart">Nouvelle demande</button>
+          </div>
+        </div>
+
+        <aside class="contact__side">
+          <div class="info-card">
+            <p class="eyebrow">Nos coordonnées</p>
+            <ul class="info-list">
+              <li><i class="fas fa-map-marker-alt"></i><div><strong>Siège social – Abidjan</strong><span>Cocody Anono Extension<br>01 BP 6105 Abidjan 01<br>Côte d'Ivoire</span></div></li>
+              <li><i class="fas fa-phone-alt"></i><div><a href="tel:+2250500000075">+225 05 00 00 00 75</a></div></li>
+              <li><i class="fas fa-envelope"></i><div><a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></div></li>
+              <li><i class="far fa-clock"></i><div>Lun. au Ven. 08h00 à 18h00 <span class="open-status" id="openStatus"></span></div></li>
+            </ul>
+          </div>
+
+          <div class="map">
+            <iframe title="Plan d'accès au siège de SFS à Cocody Anono, Abidjan" src="https://www.google.com/maps?q=Cocody%20Anono%2C%20Abidjan%2C%20C%C3%B4te%20d%27Ivoire&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <span class="map__pin" aria-hidden="true"><i class="fas fa-map-marker-alt"></i> SFS</span>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Cocody%20Anono%2C%20Abidjan%2C%20C%C3%B4te%20d%27Ivoire" target="_blank" rel="noopener" class="btn btn--outline-red btn--block">Voir le plan <i class="fas fa-external-link-alt"></i></a>
+
+          <div class="rdv-card" id="rendez-vous">
+            <span class="rdv-card__icon"><i class="far fa-calendar-alt"></i></span>
+            <h3>Prenez rendez-vous en ligne</h3>
+            <p>Choisissez le jour et le créneau qui vous conviennent : nous vous confirmons le rendez-vous rapidement.</p>
+            <a href="#formulaire" class="btn btn--outline-yellow btn--block" data-objet="rendez-vous">Réserver un créneau <i class="fas fa-chevron-right"></i></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <!-- ===== Pied de page ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--footer">
+          <img src="assets/img/logo-blanc.png" alt="SFS BTP – Société de Fournitures et de Services" width="1000" height="477" loading="lazy">
+        </a>
+        <p>SFS accompagne les entreprises, administrations et organisations dans leurs besoins en fournitures, équipements et services spécialisés.</p>
+        <p>Notre ambition : devenir un partenaire B2B de référence en Côte d'Ivoire.</p>
+        <ul class="social social--round">
+          <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Liens utiles</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="sfs.html">SFS</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nos solutions</h4>
+        <ul class="footer__links">
+          <li><a href="services.html#electricite">Matériels électriques</a></li>
+          <li><a href="services.html#hydraulique">Matériels hydrauliques et sanitaires</a></li>
+          <li><a href="services.html#construction">Matériels de construction</a></li>
+          <li><a href="services.html#epi">Équipements de protection</a></li>
+          <li><a href="services.html#informatique">Fournitures informatiques</a></li>
+          <li><a href="services.html#transport">Transport de personnel</a></li>
+          <li><a href="services.html#location">Location / Événementiel</a></li>
+          <li><a href="services.html#agricole">Matériels agricoles / Import-export</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contactez-nous</h4>
+        <ul class="footer__contact">
+          <li><i class="fas fa-map-marker-alt"></i><span>Cocody Anono Extension<br>01 BP 6105 Abidjan 01</span></li>
+          <li><i class="fas fa-phone-alt"></i><a href="tel:+2250500000075">+225 05 00 00 00 75</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></li>
+          <li><i class="far fa-clock"></i><span>Lun. au Ven. 08h00 à 18h00</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>©<span id="year">2026</span> Société de Fournitures et de Services. Tous droits réservés. <span class="sep">|</span> Site conçu par BD DIGITAL.</p>
+      <p><a href="#">Mentions légales</a> <span class="sep">|</span> <a href="#">Politique de confidentialité</a></p>
+    </div>
+    <button class="to-top" id="toTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
