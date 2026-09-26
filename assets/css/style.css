@@ -107,7 +107,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
 
 .logo { display: block; flex: none; }
 .logo img { height: 68px; width: auto; }
-.logo--footer img { height: 88px; }
+.logo--footer img { height: 88px; filter: brightness(0) invert(1); } /* logo entièrement blanc */
 
 .nav ul { display: flex; gap: 30px; }
 .nav a {
