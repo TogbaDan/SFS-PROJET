@@ -127,6 +127,18 @@
     });
   }
 
+  // Validation d'un champ de formulaire (pages Contact et Devis)
+  function validateField(el, extraOk) {
+    var field = el.closest('.field');
+    if (!field || field.hidden || el.type === 'file') return true;
+    var ok = el.type === 'checkbox' ? el.checked : el.checkValidity() && (!el.required || el.value.trim() !== '');
+    ok = ok && extraOk !== false;
+    field.classList.toggle('is-invalid', !ok);
+    field.classList.toggle('is-valid', ok && el.type !== 'checkbox' && el.value.trim() !== '');
+    el.setAttribute('aria-invalid', !ok);
+    return ok;
+  }
+
   // Page Contact : formulaire, pré-remplissage, rendez-vous, horaires
   var form = document.getElementById('contactForm');
   if (form) {
@@ -145,6 +157,7 @@
       var on = objet.value === 'rendez-vous';
       rdvFields.forEach(function (f) { f.hidden = !on; });
       rdvDate.required = on; rdvSlot.required = on;
+      document.getElementById('devisHint').hidden = objet.value !== 'devis';
     }
     function updateCount() { document.getElementById('messageCount').textContent = message.value.length + ' / 2000'; }
 
@@ -153,14 +166,7 @@
       return d.getDay() > 0 && d.getDay() < 6;
     }
     function checkField(el) {
-      var field = el.closest('.field');
-      if (!field || field.hidden) return true;
-      var ok = el.type === 'checkbox' ? el.checked : el.checkValidity() && (!el.required || el.value.trim() !== '');
-      if (ok && el === rdvDate && el.value) ok = isWeekday(el.value);
-      field.classList.toggle('is-invalid', !ok);
-      field.classList.toggle('is-valid', ok && el.type !== 'checkbox' && el.value.trim() !== '');
-      el.setAttribute('aria-invalid', !ok);
-      return ok;
+      return validateField(el, el === rdvDate && el.value ? isWeekday(el.value) : true);
     }
 
     // Pré-remplissage depuis les liens du site (?objet=devis&sujet=…)
@@ -223,6 +229,132 @@
     var open = day > 0 && day < 6 && h >= 8 && h < 18;
     status.textContent = open ? 'Ouvert actuellement' : 'Fermé actuellement';
     status.classList.add(open ? 'is-open' : 'is-closed');
+  }
+
+  // Page Devis : progression, pièces jointes, pré-remplissage, envoi
+  var devisForm = document.getElementById('devisForm');
+  if (devisForm) {
+    var dMessage = devisForm.elements.message;
+    var besoin = devisForm.elements.besoin;
+    var fileInput = document.getElementById('d-fichier');
+    var dropzone = document.getElementById('dropzone');
+    var fileList = document.getElementById('fileList');
+    var fileError = document.getElementById('fileError');
+    var steps = document.querySelectorAll('#devisStepper .stepper__step');
+    var sections = devisForm.querySelectorAll('.form__section');
+    var files = [];
+    var MAX = 10 * 1024 * 1024;
+    var EXT = /\.(pdf|docx?|xlsx?|csv|png|jpe?g)$/i;
+
+    function sectionComplete(section) {
+      var ok = true;
+      section.querySelectorAll('[required]').forEach(function (el) {
+        if (el.type === 'checkbox' ? !el.checked : !(el.checkValidity() && el.value.trim())) ok = false;
+      });
+      return ok;
+    }
+    function updateStepper() {
+      var current = null;
+      sections.forEach(function (sec, i) {
+        var done = sectionComplete(sec);
+        steps[i].classList.toggle('is-done', done);
+        if (!done && current === null) current = i;
+      });
+      steps.forEach(function (st, i) { st.classList.toggle('is-current', i === current); });
+    }
+    function norm(t) { return t.toLowerCase().replace(/&/g, 'et').normalize('NFD').replace(/[̀-ͯ]/g, '').trim(); }
+    function updateCount() { document.getElementById('devisCount').textContent = dMessage.value.length + ' / 3000'; }
+    function size(b) { return b > 1048576 ? (b / 1048576).toFixed(1) + ' Mo' : Math.max(1, Math.round(b / 1024)) + ' Ko'; }
+
+    function renderFiles() {
+      fileList.innerHTML = '';
+      files.forEach(function (f, i) {
+        var li = document.createElement('li');
+        li.innerHTML = '<i class="far fa-file-alt"></i><span></span><small>' + size(f.size) + '</small><button type="button" aria-label="Retirer le fichier"><i class="fas fa-times"></i></button>';
+        li.querySelector('span').textContent = f.name;
+        li.querySelector('button').addEventListener('click', function () { files.splice(i, 1); renderFiles(); });
+        fileList.appendChild(li);
+      });
+    }
+    function addFiles(list) {
+      var rejected = false;
+      Array.prototype.forEach.call(list, function (f) {
+        if (f.size > MAX || !EXT.test(f.name)) { rejected = true; return; }
+        if (!files.some(function (x) { return x.name === f.name && x.size === f.size; })) files.push(f);
+      });
+      fileError.classList.toggle('is-shown', rejected);
+      renderFiles();
+    }
+    fileInput.addEventListener('change', function () { addFiles(fileInput.files); fileInput.value = ''; });
+    ['dragenter', 'dragover'].forEach(function (t) { dropzone.addEventListener(t, function (e) { e.preventDefault(); dropzone.classList.add('is-over'); }); });
+    ['dragleave', 'drop'].forEach(function (t) { dropzone.addEventListener(t, function (e) { e.preventDefault(); dropzone.classList.remove('is-over'); }); });
+    dropzone.addEventListener('drop', function (e) { addFiles(e.dataTransfer.files); });
+    document.getElementById('specCard').addEventListener('click', function (e) {
+      e.preventDefault();
+      dropzone.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function () { dropzone.classList.add('is-over'); setTimeout(function () { dropzone.classList.remove('is-over'); }, 900); }, 500);
+    });
+
+    // Pré-remplissage depuis les cartes de services (?sujet=…)
+    var sujet = new URLSearchParams(window.location.search).get('sujet');
+    if (sujet) {
+      Array.prototype.some.call(besoin.options, function (o) {
+        if (o.value !== '' && norm(o.text) === norm(sujet)) { besoin.value = o.text; return true; }
+      });
+    }
+
+    devisForm.addEventListener('input', function (e) {
+      if (e.target === dMessage) updateCount();
+      if (e.target.closest('.is-invalid')) validateField(e.target);
+      updateStepper();
+    });
+    devisForm.addEventListener('change', function (e) {
+      if (e.target.type === 'checkbox' || e.target.tagName === 'SELECT') validateField(e.target);
+      updateStepper();
+    });
+    devisForm.addEventListener('blur', function (e) { if (e.target.matches('input, select, textarea') && e.target.value) validateField(e.target); }, true);
+    updateCount(); updateStepper();
+
+    devisForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var firstBad = null;
+      devisForm.querySelectorAll('input, select, textarea').forEach(function (el) {
+        if (!validateField(el) && !firstBad) firstBad = el;
+      });
+      if (firstBad) { firstBad.focus(); return; }
+
+      var v = function (n) { return devisForm.elements[n].value.trim(); };
+      var lines = [
+        'DEMANDE DE DEVIS', '',
+        'Nom : ' + v('prenom') + ' ' + v('nom'),
+        'Entreprise : ' + v('entreprise') + (v('fonction') ? ' – ' + v('fonction') : ''),
+        'Téléphone : ' + v('telephone'),
+        'E-mail : ' + v('email'), '',
+        'Type de besoin : ' + v('besoin'),
+        v('delai') ? 'Délai souhaité : ' + v('delai') : null,
+        v('lieu') ? 'Lieu de livraison : ' + v('lieu') : null,
+        '', 'Description du besoin :', v('message'),
+        files.length ? '\nPièce(s) jointe(s) : ' + files.map(function (f) { return f.name; }).join(', ') : null
+      ].filter(function (l) { return l !== null; });
+      var subject = 'Demande de devis – ' + v('besoin') + ' – ' + v('entreprise');
+      window.location.href = 'mailto:contact@sfs-ci.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+
+      var reminder = document.getElementById('devisFilesReminder');
+      reminder.hidden = !files.length;
+      document.getElementById('devisFilesNames').textContent = files.map(function (f) { return f.name; }).join(', ');
+      devisForm.hidden = true;
+      document.getElementById('devisStepper').hidden = true;
+      var ok = document.getElementById('devisSuccess'); ok.hidden = false; ok.focus();
+    });
+
+    document.getElementById('devisRestart').addEventListener('click', function () {
+      devisForm.reset(); files = []; renderFiles(); fileError.classList.remove('is-shown');
+      devisForm.querySelectorAll('.field').forEach(function (f) { f.classList.remove('is-valid', 'is-invalid'); });
+      updateCount(); updateStepper();
+      document.getElementById('devisSuccess').hidden = true;
+      devisForm.hidden = false; document.getElementById('devisStepper').hidden = false;
+      devisForm.elements.nom.focus();
+    });
   }
 
   // Apparition des sections au défilement

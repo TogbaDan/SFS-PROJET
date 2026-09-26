@@ -67,3 +67,7 @@ Pour changer le logo, remplacez ces deux fichiers en gardant les mêmes noms.
 ## Page « Contact » (contact.html)
 
 - `contact-hero.jpg` (1920 × 600) : bandeau du haut.
+
+## Page « Demander un devis » (devis.html)
+
+- `devis-hero.jpg` (1920 × 600) : bandeau du haut.

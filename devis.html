@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demander un devis – SFS, Société de Fournitures et de Services</title>
+  <meta name="description" content="Demandez un devis à SFS : matériels électriques, hydrauliques, construction, EPI, informatique, agricole, transport, location, restauration, import-export. Offre sur mesure en Côte d'Ivoire.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Barre supérieure ===== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <ul class="social">
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+      <ul class="topbar__info">
+        <li><i class="fas fa-phone-alt"></i> <a href="tel:+2250500000075">+225 05 00 00 00 75</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></li>
+        <li><i class="far fa-clock"></i> Lun. au Ven. 08h00 à 18h00</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== En-tête / navigation ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="SFS BTP – Société de Fournitures et de Services" width="1000" height="477">
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="sfs.html">SFS</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="devis.html" class="btn btn--red btn--sm" aria-current="page">Demander un devis</a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Bandeau de page ===== -->
+    <section class="page-hero page-hero--devis">
+      <div class="page-hero__bg media"><img src="assets/img/devis-hero.jpg" alt=""></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol>
+            <li><a href="index.html">Accueil</a></li>
+            <li aria-current="page">Demander un devis</li>
+          </ol>
+        </nav>
+        <h1>Demander un devis</h1>
+        <p>Décrivez votre besoin, nous vous adressons une offre détaillée et adaptée dans les meilleurs délais.</p>
+        <ul class="hero-badges">
+          <li><i class="fas fa-rocket"></i> Réponse rapide</li>
+          <li><i class="fas fa-shield-alt"></i> Offre sur mesure</li>
+          <li><i class="fas fa-users"></i> Accompagnement personnalisé</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Formulaire de devis ===== -->
+    <section class="section contact devis" id="formulaire">
+      <div class="container contact__grid">
+        <div class="contact__main">
+          <p class="eyebrow">Formulaire de demande de devis</p>
+          <h2 class="contact__title">Parlez-nous de <span class="text-red">votre projet</span></h2>
+          <p class="devis__lead">Remplissez le formulaire ci-dessous. Notre équipe vous recontacte dans les meilleurs délais avec une proposition adaptée à vos besoins.</p>
+
+          <ol class="stepper" id="devisStepper" aria-label="Progression du formulaire">
+            <li class="stepper__step" data-step="1"><span class="stepper__num">1</span><span>Vos coordonnées</span></li>
+            <li class="stepper__step" data-step="2"><span class="stepper__num">2</span><span>Votre besoin</span></li>
+            <li class="stepper__step" data-step="3"><span class="stepper__num">3</span><span>Validation</span></li>
+          </ol>
+
+          <form class="form" id="devisForm" novalidate>
+            <fieldset class="form__section" data-step="1">
+              <legend><span>1</span> Vos coordonnées</legend>
+              <div class="form__grid">
+                <div class="field">
+                  <label for="d-nom">Nom <span class="req">*</span></label>
+                  <div class="field__control"><i class="far fa-user"></i><input id="d-nom" name="nom" type="text" autocomplete="family-name" placeholder="Votre nom" required></div>
+                  <p class="field__error">Merci d'indiquer votre nom.</p>
+                </div>
+                <div class="field">
+                  <label for="d-prenom">Prénom <span class="req">*</span></label>
+                  <div class="field__control"><i class="far fa-user"></i><input id="d-prenom" name="prenom" type="text" autocomplete="given-name" placeholder="Votre prénom" required></div>
+                  <p class="field__error">Merci d'indiquer votre prénom.</p>
+                </div>
+                <div class="field">
+                  <label for="d-entreprise">Entreprise <span class="req">*</span></label>
+                  <div class="field__control"><i class="far fa-building"></i><input id="d-entreprise" name="entreprise" type="text" autocomplete="organization" placeholder="Nom de votre entreprise" required></div>
+                  <p class="field__error">Merci d'indiquer le nom de votre entreprise ou organisation.</p>
+                </div>
+                <div class="field">
+                  <label for="d-fonction">Fonction <span class="opt">(optionnel)</span></label>
+                  <div class="field__control"><i class="far fa-id-badge"></i><input id="d-fonction" name="fonction" type="text" autocomplete="organization-title" placeholder="Votre fonction"></div>
+                </div>
+                <div class="field">
+                  <label for="d-telephone">Téléphone <span class="req">*</span></label>
+                  <div class="field__control"><i class="fas fa-phone-alt"></i><input id="d-telephone" name="telephone" type="tel" autocomplete="tel" placeholder="+225 07 00 00 00 00" pattern="[+0-9 ().-]{8,}" required></div>
+                  <p class="field__error">Merci d'indiquer un numéro de téléphone valide.</p>
+                </div>
+                <div class="field">
+                  <label for="d-email">E-mail <span class="req">*</span></label>
+                  <div class="field__control"><i class="far fa-envelope"></i><input id="d-email" name="email" type="email" autocomplete="email" placeholder="votre@email.com" required></div>
+                  <p class="field__error">Merci d'indiquer une adresse e-mail valide.</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form__section" data-step="2">
+              <legend><span>2</span> Votre besoin</legend>
+              <div class="form__grid">
+                <div class="field field--full">
+                  <label for="d-besoin">Type de besoin <span class="req">*</span></label>
+                  <div class="field__control field__control--select"><i class="far fa-list-alt"></i>
+                    <select id="d-besoin" name="besoin" required>
+                      <option value="">Sélectionnez un type de besoin</option>
+                      <option>Matériels électriques</option>
+                      <option>Matériels hydrauliques et sanitaires</option>
+                      <option>Matériels et fournitures de construction</option>
+                      <option>Équipements de protection individuelle</option>
+                      <option>Fournitures informatiques et bureautiques</option>
+                      <option>Matériels agricoles</option>
+                      <option>Transport de personnel</option>
+                      <option>Location</option>
+                      <option>Restauration et services événementiels</option>
+                      <option>Import-export</option>
+                      <option>Plusieurs besoins / autre</option>
+                    </select>
+                  </div>
+                  <p class="field__error">Merci de choisir le type de besoin.</p>
+                </div>
+                <div class="field">
+                  <label for="d-delai">Délai souhaité <span class="opt">(optionnel)</span></label>
+                  <div class="field__control field__control--select"><i class="far fa-clock"></i>
+                    <select id="d-delai" name="delai">
+                      <option value="">Sélectionnez un délai</option>
+                      <option>Urgent (moins d'une semaine)</option>
+                      <option>Sous 2 à 4 semaines</option>
+                      <option>Dans plus d'un mois</option>
+                      <option>Flexible</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="d-lieu">Lieu de livraison <span class="opt">(optionnel)</span></label>
+                  <div class="field__control"><i class="fas fa-map-marker-alt"></i><input id="d-lieu" name="lieu" type="text" placeholder="Ville, commune ou site"></div>
+                </div>
+                <div class="field field--full">
+                  <label for="d-message">Décrivez votre besoin <span class="req">*</span></label>
+                  <div class="field__control field__control--area"><i class="far fa-comment-dots"></i><textarea id="d-message" name="message" rows="6" maxlength="3000" placeholder="Décrivez les produits, quantités, spécifications ou prestations recherchés…" required></textarea></div>
+                  <div class="field__foot"><p class="field__error">Merci de décrire votre besoin.</p><span class="field__count" id="devisCount">0 / 3000</span></div>
+                </div>
+                <div class="field field--full">
+                  <label for="d-fichier">Joindre un document <span class="opt">(optionnel)</span></label>
+                  <label class="dropzone" id="dropzone" for="d-fichier">
+                    <input id="d-fichier" name="fichier" type="file" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.png,.jpg,.jpeg">
+                    <span class="dropzone__icon"><i class="fas fa-paperclip"></i></span>
+                    <span class="dropzone__text"><strong>Cliquez pour ajouter un fichier ou glissez-déposez ici</strong><small>PDF, Excel, Word, images… (max. 10 Mo par fichier)</small></span>
+                  </label>
+                  <ul class="files" id="fileList"></ul>
+                  <p class="field__error" id="fileError">Ce fichier dépasse 10 Mo ou n'est pas dans un format accepté.</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form__section" data-step="3">
+              <legend><span>3</span> Validation</legend>
+              <div class="field field--check">
+                <label class="check">
+                  <input type="checkbox" id="d-consentement" name="consentement" required>
+                  <span class="check__box"><i class="fas fa-check"></i></span>
+                  <span>J'accepte que les informations saisies soient traitées dans le cadre de ma demande de devis et de la relation commerciale qui peut en découler.</span>
+                </label>
+                <p class="field__error">Merci d'accepter le traitement de vos données pour envoyer votre demande.</p>
+              </div>
+              <div class="form__actions">
+                <button type="submit" class="btn btn--red btn--lg">Envoyer ma demande de devis <i class="fas fa-paper-plane"></i></button>
+                <p class="form__secure"><i class="fas fa-lock"></i> Vos données restent confidentielles.</p>
+              </div>
+              <p class="form__legal">Pour connaître et exercer vos droits, notamment de retrait de votre consentement à l'utilisation des données collectées par ce formulaire, veuillez consulter notre page <a href="#">mentions légales</a>.</p>
+            </fieldset>
+          </form>
+
+          <div class="form-success" id="devisSuccess" hidden tabindex="-1">
+            <span class="form-success__icon"><i class="fas fa-check"></i></span>
+            <h3>Merci, votre demande de devis est prête !</h3>
+            <p>Votre messagerie s'ouvre avec votre demande déjà rédigée : il ne vous reste qu'à cliquer sur « Envoyer ».</p>
+            <p class="form-success__files" id="devisFilesReminder" hidden><i class="fas fa-paperclip"></i> N'oubliez pas de joindre à l'e-mail le(s) fichier(s) sélectionné(s) : <strong id="devisFilesNames"></strong></p>
+            <p>Si votre messagerie ne s'ouvre pas, écrivez-nous à <a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a> ou appelez le <a href="tel:+2250500000075">+225 05 00 00 00 75</a>.</p>
+            <button type="button" class="btn btn--outline" id="devisRestart">Nouvelle demande</button>
+          </div>
+        </div>
+
+        <aside class="contact__side">
+          <div class="info-card why-card">
+            <h3 class="side-title">Pourquoi demander un devis chez SFS ?</h3>
+            <ul class="why-list">
+              <li><span class="why-list__icon"><i class="fas fa-cog"></i></span><div><strong>Une offre adaptée</strong><span>Des solutions sur mesure selon vos besoins et votre secteur d'activité.</span></div></li>
+              <li><span class="why-list__icon"><i class="far fa-clock"></i></span><div><strong>Réponse rapide</strong><span>Notre équipe s'engage à vous répondre dans les meilleurs délais.</span></div></li>
+              <li><span class="why-list__icon"><i class="fas fa-handshake"></i></span><div><strong>Un accompagnement personnalisé</strong><span>De la sélection des produits à la livraison.</span></div></li>
+              <li><span class="why-list__icon"><i class="fas fa-shield-alt"></i></span><div><strong>Des produits et services fiables</strong><span>Des équipements de qualité auprès de partenaires reconnus.</span></div></li>
+            </ul>
+          </div>
+
+          <div class="info-card advice-card">
+            <h3 class="side-title">Besoin d'un conseil ?</h3>
+            <p class="advice-card__lead">Notre équipe est à votre écoute.</p>
+            <ul class="info-list">
+              <li><i class="fas fa-phone-alt"></i><div><a href="tel:+2250500000075">+225 05 00 00 00 75</a></div></li>
+              <li><i class="fas fa-envelope"></i><div><a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></div></li>
+              <li><i class="far fa-clock"></i><div>Lun. au Ven. 08h00 à 18h00</div></li>
+              <li class="info-list__sep"><i class="fas fa-map-marker-alt"></i><div><strong>Siège social – Abidjan</strong><span>Cocody Anono Extension<br>01 BP 6105 Abidjan 01<br>Côte d'Ivoire</span></div></li>
+            </ul>
+            <i class="fas fa-headset advice-card__deco" aria-hidden="true"></i>
+          </div>
+
+          <a href="#dropzone" class="spec-card" id="specCard">
+            <span class="spec-card__icon"><i class="far fa-file-alt"></i></span>
+            <span><strong>Vous avez un cahier des charges ?</strong><span>Ajoutez-le directement au formulaire pour une offre au plus près de vos attentes.</span></span>
+            <i class="fas fa-arrow-right spec-card__arrow"></i>
+          </a>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <!-- ===== Pied de page ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--footer">
+          <img src="assets/img/logo-blanc.png" alt="SFS BTP – Société de Fournitures et de Services" width="1000" height="477" loading="lazy">
+        </a>
+        <p>SFS accompagne les entreprises, administrations et organisations dans leurs besoins en fournitures, équipements et services spécialisés.</p>
+        <p>Notre ambition : devenir un partenaire B2B de référence en Côte d'Ivoire.</p>
+        <ul class="social social--round">
+          <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Liens utiles</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="sfs.html">SFS</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nos solutions</h4>
+        <ul class="footer__links">
+          <li><a href="services.html#electricite">Matériels électriques</a></li>
+          <li><a href="services.html#hydraulique">Matériels hydrauliques et sanitaires</a></li>
+          <li><a href="services.html#construction">Matériels de construction</a></li>
+          <li><a href="services.html#epi">Équipements de protection</a></li>
+          <li><a href="services.html#informatique">Fournitures informatiques</a></li>
+          <li><a href="services.html#transport">Transport de personnel</a></li>
+          <li><a href="services.html#location">Location / Événementiel</a></li>
+          <li><a href="services.html#agricole">Matériels agricoles / Import-export</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contactez-nous</h4>
+        <ul class="footer__contact">
+          <li><i class="fas fa-map-marker-alt"></i><span>Cocody Anono Extension<br>01 BP 6105 Abidjan 01</span></li>
+          <li><i class="fas fa-phone-alt"></i><a href="tel:+2250500000075">+225 05 00 00 00 75</a></li>
+          <li><i class="fas fa-envelope"></i><a href="mailto:contact@sfs-ci.com">contact@sfs-ci.com</a></li>
+          <li><i class="far fa-clock"></i><span>Lun. au Ven. 08h00 à 18h00</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>©<span id="year">2026</span> Société de Fournitures et de Services. Tous droits réservés. <span class="sep">|</span> Site conçu par BD DIGITAL.</p>
+      <p><a href="#">Mentions légales</a> <span class="sep">|</span> <a href="#">Politique de confidentialité</a></p>
+    </div>
+    <button class="to-top" id="toTop" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
