@@ -106,8 +106,8 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
 .header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 88px; gap: 24px; }
 
 .logo { display: block; flex: none; }
-.logo img { height: 58px; width: auto; }
-.logo--footer img { height: 60px; }
+.logo img { height: 68px; width: auto; }
+.logo--footer img { height: 88px; }
 
 .nav ul { display: flex; gap: 30px; }
 .nav a {
@@ -357,7 +357,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
 }
 
 /* Menu burger dès que la navigation ne tient plus sur une ligne */
-@media (max-width: 1060px) {
+@media (max-width: 960px) {
   .burger { display: block; }
   .header__actions .btn { display: none; }
   .nav {
@@ -387,7 +387,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   .topbar .social, .topbar__info li:nth-child(3) { display: none; }
   .topbar__info { gap: 14px; justify-content: center; }
   .header__inner { min-height: 70px; }
-  .logo img { height: 42px; }
+  .logo img { height: 52px; }
   .hero { min-height: 0; }
   .hero__content { padding-top: 50px; padding-bottom: 40px; }
   .hero__arrow { display: none; }
